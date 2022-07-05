@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Chess">
+      <UniqueIdentifier>{c399836b-13b6-413e-a5a6-272a12ea37bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chess">
+      <UniqueIdentifier>{ddbab28f-4fc6-44f9-8b70-79736cf9c918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chess\FEN">
+      <UniqueIdentifier>{1787cab6-4654-4dbd-a8f1-20ecf78d8a18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chess\FEN">
+      <UniqueIdentifier>{e73b3d11-b88b-4d06-9fd2-de76927698c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Testing">
+      <UniqueIdentifier>{c646502b-807d-4960-8936-001dc712a938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Testing">
+      <UniqueIdentifier>{5c5794dc-98f2-49f9-9404-3ed97be10c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Testing\Tests">
+      <UniqueIdentifier>{b6fee9c8-c73c-420d-b40c-8720a5abe9cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChessAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessBoard.cpp">
+      <Filter>Source Files\Chess</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveStack.cpp">
+      <Filter>Source Files\Chess</Filter>
+    </ClCompile>
+    <ClCompile Include="Tester.cpp">
+      <Filter>Source Files\Testing</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChessBoard.h">
+      <Filter>Header Files\Chess</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveStack.h">
+      <Filter>Header Files\Chess</Filter>
+    </ClInclude>
+    <ClInclude Include="Move.h">
+      <Filter>Header Files\Chess</Filter>
+    </ClInclude>
+    <ClInclude Include="FENHandler.h">
+      <Filter>Header Files\Chess\FEN</Filter>
+    </ClInclude>
+    <ClInclude Include="Tester.h">
+      <Filter>Header Files\Testing</Filter>
+    </ClInclude>
+    <ClInclude Include="FENStringTester.h">
+      <Filter>Header Files\Testing\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintChessBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Piece.h">
+      <Filter>Header Files\Chess</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
