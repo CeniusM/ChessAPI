@@ -38,14 +38,33 @@ char GetCharFromPiece(char p)
     }
 }
 
+std::string GetStringPosFromNum(int i)
+{
+    std::string str = "  ";
+    str[0] = static_cast<char>(i % 8 + 'a');
+    str[1] = static_cast<char>(8 - (i >> 3) + '0');
+    return str;
+}
+
 void PrintChessBoard(ChessBoard& chessGame);
 
 void PrintChessBoardAndStats(ChessBoard& chessGame)
 {
     PrintChessBoard(chessGame);
 
+    if (chessGame.moveStack.Count() == 0)
+    {
+        std::cout << "Last Move: " << "None\n";
+        std::cout << "MoveStack Count: 0\n";
+    }
+    else
+    {
+        Move move = chessGame.moveStack.Peek();
+        std::cout << "Last Move: " << GetStringPosFromNum(move.StartSquare) << " - " << GetStringPosFromNum(move.TargetSquare) << "\n";
+        std::cout << "MoveStack Count: "<< chessGame.moveStack.Count() << "\n";
+    }
     std::cout << "Player Turn: " << (chessGame.m_playerTurn == 8 ? "White" : (chessGame.m_playerTurn == 16 ? "Black" : "Error")) << "\n";
-    std::cout << "EnPassent Piece: " << static_cast<char>(chessGame.m_enPassantPiece % 8 + 'a') << static_cast<char>( 8 - (chessGame.m_enPassantPiece >> 3) + '0') << "\n";
+    std::cout << "EnPassent Piece: " << (chessGame.m_enPassantPiece == 64 ? "None" : GetStringPosFromNum(chessGame.m_enPassantPiece)) << "\n";
     std::bitset<4> foo(chessGame.m_castle);
     std::cout << "Castle: " << foo << "\n";
     std::cout << "HalfMove: " << chessGame.m_halfMove << "\n";

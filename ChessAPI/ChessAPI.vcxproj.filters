@@ -34,19 +34,28 @@
     <Filter Include="Header Files\Testing\Tests">
       <UniqueIdentifier>{b6fee9c8-c73c-420d-b40c-8720a5abe9cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Chess\ChessBoard">
+      <UniqueIdentifier>{5262e9c7-8919-47b6-81e9-06c55a9792dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ChessAPI.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ChessBoard.cpp">
-      <Filter>Source Files\Chess</Filter>
     </ClCompile>
     <ClCompile Include="MoveStack.cpp">
       <Filter>Source Files\Chess</Filter>
     </ClCompile>
     <ClCompile Include="Tester.cpp">
       <Filter>Source Files\Testing</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessBoardConstrucktors.cpp">
+      <Filter>Source Files\Chess\ChessBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessBoardMakingMoves.cpp">
+      <Filter>Source Files\Chess\ChessBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessBoardMoveGeneration.cpp">
+      <Filter>Source Files\Chess\ChessBoard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +81,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Piece.h">
+      <Filter>Header Files\Chess</Filter>
+    </ClInclude>
+    <ClInclude Include="PieceList.h">
+      <Filter>Header Files\Chess</Filter>
+    </ClInclude>
+    <ClInclude Include="MovesFromSquare.h">
+      <Filter>Header Files\Chess</Filter>
+    </ClInclude>
+    <ClInclude Include="Directions.h">
       <Filter>Header Files\Chess</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,6 +22,8 @@ Move MoveStack::Pop()
 
 Move MoveStack::Peek()
 {
+	if (m_count == 0)
+		throw std::out_of_range("Peek out of range");
 	return moves[m_count - 1];
 }
 

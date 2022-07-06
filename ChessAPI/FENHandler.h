@@ -178,8 +178,100 @@ public:
         return boardPtr;
 	}
 
+
+    static void SetChar(char c, char* CString, int& CStringPointer)
+    {
+        CString[CStringPointer] = c;
+        CStringPointer++;
+    }
+
 	static std::string GetString(ChessBoard board) // end at null
 	{
-        
+        char CString[100];
+        int CStringPointer = 0;
+
+        int gap = 0;
+        for (int i = 0; i < 64; i++)
+        {
+            if (i % 8 == 0 && i != 0)
+            {
+                if (gap > 0)
+                {
+                    SetChar((char)(gap + '0'), CString, CStringPointer);
+                    gap = 0;
+                }
+                SetChar('/', CString, CStringPointer);
+            }
+
+            if (board.m_board[i] == 0)
+            {
+                gap++;
+            }
+            else
+            {
+                if (gap > 0)
+                {
+                    SetChar((char)(gap + '0'), CString, CStringPointer);
+                    gap = 0;
+                }
+                CString[CStringPointer] = GetCharFromPiece(board.m_board[i]);
+                CStringPointer++;
+            }
+        }
+        if (gap > 0)
+            SetChar((char)(gap + '0'), CString, CStringPointer);
+        SetChar(' ', CString, CStringPointer);
+
+        if (board.m_playerTurn == 8)
+            SetChar('w', CString, CStringPointer);
+        else
+            SetChar('b', CString, CStringPointer);
+        SetChar(' ', CString, CStringPointer);
+
+        if ((board.m_castle & 0b1000) == 0b1000)
+            SetChar('K', CString, CStringPointer);
+        if ((board.m_castle & 0b0100) == 0b0100)
+            SetChar('Q', CString, CStringPointer);
+        if ((board.m_castle & 0b0010) == 0b0010)
+            SetChar('k', CString, CStringPointer);
+        if ((board.m_castle & 0b0001) == 0b0001)
+            SetChar('q', CString, CStringPointer);
+        if (CString[CStringPointer - 1] == ' ') // check if anything has acually placed
+            SetChar('-', CString, CStringPointer);
+        SetChar(' ', CString, CStringPointer);
+
+        if (board.m_enPassantPiece != 64)
+        {
+            // set the collum with letter
+            SetChar((char)((int)'a' + board.m_enPassantPiece % 8), CString, CStringPointer);
+
+            // set the rank
+            SetChar((char)(8 - (board.m_enPassantPiece >> 3) + '0'), CString, CStringPointer);
+        }
+        else
+            SetChar('-', CString, CStringPointer);
+        SetChar(' ', CString, CStringPointer);
+
+
+        if (board.m_halfMove > 9)
+            SetChar((char)((board.m_halfMove / 10) + (int)'0'), CString, CStringPointer);
+        SetChar((char)((board.m_halfMove % 10) + (int)'0'), CString, CStringPointer);
+        SetChar(' ', CString, CStringPointer);
+
+        if (board.m_fullMove > 9)
+            SetChar((char)((board.m_fullMove / 10) + (int)'0'), CString, CStringPointer);
+        SetChar((char)((board.m_fullMove % 10) + (int)'0'), CString, CStringPointer);
+
+
+
+        char* temp = new char[CStringPointer + 1];
+        for (int i = 0; i < CStringPointer; i++)
+        {
+            temp[i] = CString[i];
+        }
+        temp[CStringPointer] = NULL;
+        std::string FENString(temp);
+        delete[] temp;
+        return FENString;
 	}
 };

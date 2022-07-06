@@ -127,18 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ChessAPI.cpp" />
-    <ClCompile Include="ChessBoard.cpp" />
+    <ClCompile Include="ChessBoardMakingMoves.cpp" />
+    <ClCompile Include="ChessBoardMoveGeneration.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ChessBoardConstrucktors.cpp" />
     <ClCompile Include="MoveStack.cpp" />
     <ClCompile Include="Tester.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChessBoard.h" />
+    <ClInclude Include="Directions.h" />
     <ClInclude Include="FENHandler.h" />
     <ClInclude Include="FENStringTester.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="MovesFromSquare.h" />
     <ClInclude Include="MoveStack.h" />
     <ClInclude Include="Piece.h" />
+    <ClInclude Include="PieceList.h" />
     <ClInclude Include="PrintChessBoard.h" />
     <ClInclude Include="Tester.h" />
   </ItemGroup>

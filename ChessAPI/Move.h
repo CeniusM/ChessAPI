@@ -26,4 +26,6 @@ struct Move
         MoveFlag = flag;
         CapturedPiece = capturedPiece;
     }
+
+    Move() { StartSquare = -1; TargetSquare = -1; MoveFlag = -1; CapturedPiece = -1; }
 };
